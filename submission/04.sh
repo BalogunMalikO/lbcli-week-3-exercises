@@ -6,6 +6,6 @@ KEY_3="03ce11c7b563c3d7fae916351f234eac5089ad2e42fa9e29a94ee944e00c880c66"
 
 KEYS="[\"$KEY_1\", \"$KEY_2\", \"$KEY_3\"]"
 
-P2SH_ADDRESS=$(bitcoin-cli -regtest createmultisig 2 "$KEYS" |jq -r '.address')
+P2SH_ADDRESS=$(bitcoin-cli -regtest createmultisig 2 $KEYS| jq -r '.address')
 
 echo P2SH_ADDRESS
