@@ -8,9 +8,9 @@ DECODE=$(bitcoin-cli -regtest decoderawtransaction $RAW_TX)
 
 #extract txid, vout fron decoded transaction
 
-TXID=$(DECODE| jq -r '.txid')
-VOUT_1=$(DECODE| jq -r '.vout[0].n')
-VOUT_2=$(DECODE| jq -r '.vout[1].n')
+TXID=$(echo $DECODE| jq -r '.txid')
+VOUT_1=$(echo $DECODE| jq -r '.vout[0].n')
+VOUT_2=$(echo $DECODE| jq -r '.vout[1].n')
 
 #compose arguement
 

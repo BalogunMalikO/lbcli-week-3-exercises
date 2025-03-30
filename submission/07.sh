@@ -3,4 +3,4 @@ RAW_PSBT=cHNidP8BAHsCAAAAAhuVpgVRdOxkuC7wW2rvw4800OVxl+QCgezYKHtCYN7GAQAAAAD////
 
 DECODE_PSBT=$(bitcoin-cli -regtest decodepsbt $RAW_PSBT| jq -r '.tx.vout[0].scriptPubkey.address')
 
-echo DECODE_PSBT
+echo $DECODE_PSBT
