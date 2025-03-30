@@ -14,11 +14,11 @@ VOUT_2=$(echo $DECODE| jq -r '.vout[1].n')
 
 #compose arguement
 
-INPUT="[{\"txid\": \"$TXID\", \"vout_1\": \"$VOUT_1\"}, {\"txid\": \"$TXID\", \"vout_2\": \"$VOUT_2\"}]"
+INPUT="[{\"txid\": \"$TXID\", \"vout\": $VOUT_1}, {\"txid\": \"$TXID\", \"vout\": $VOUT_2}]"
 OUTPUTS="{ \"2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP\": 0.20000000 }"
 
 #create raw tx
-CREATE_RAW_TX=$(bitcoin-cli -regtest createrawtransaction "$INPUT", "$OUTPUT")
+CREATE_RAW_TX=$(bitcoin-cli -regtest createrawtransaction "$INPUT" "$OUTPUTS")
 
 #CREATE PATIALLY SIGNED BITCOIN TRANSACTION
 
